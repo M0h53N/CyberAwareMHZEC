@@ -1,0 +1,456 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.hero {
+    background: linear-gradient(135deg, #ff6b6b 0%, #9b59b6 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    font-weight: 300;
+    opacity: 0.95;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #9b59b6;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #ff6b6b;
+    margin-bottom: 15px;
+}
+
+h4 {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.content-card {
+    background: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+ul {
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.section-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.scenario-container {
+    display: grid;
+    gap: 25px;
+}
+
+.scenario-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scenario-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.scenario-content h4 {
+    color: #9b59b6;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.scenario-content p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.scenario-question {
+    font-weight: 600;
+    color: #333;
+    margin-top: 20px;
+}
+
+.scenario-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.answer-btn {
+    flex: 1;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.safe-btn {
+    background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+    color: white;
+}
+
+.unsafe-btn {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+}
+
+.answer-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.answer-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.scenario-feedback {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    line-height: 1.8;
+    display: none;
+}
+
+.scenario-feedback.visible {
+    display: block;
+}
+
+.scenario-feedback.correct {
+    background-color: #d4edda;
+    color: #27ae60;
+    border-left: 4px solid #27ae60;
+}
+
+.scenario-feedback.incorrect {
+    background-color: #f8d7da;
+    color: #e74c3c;
+    border-left: 4px solid #e74c3c;
+}
+
+.scenario-results {
+    margin-top: 40px;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.3rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: none;
+}
+
+.scenario-results.visible {
+    display: block;
+}
+
+.scenario-results.excellent {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    color: #27ae60;
+    border: 3px solid #27ae60;
+}
+
+.scenario-results.good {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    color: #f39c12;
+    border: 3px solid #f39c12;
+}
+
+.scenario-results.needs-improvement {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    color: #e74c3c;
+    border: 3px solid #e74c3c;
+}
+
+.video-section {
+    text-align: center;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.redflags-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.accordion-btn {
+    width: 100%;
+    padding: 20px 25px;
+    background: linear-gradient(135deg, #9b59b6 0%, #ff6b6b 100%);
+    color: white;
+    border: none;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+.accordion-btn:hover {
+    opacity: 0.9;
+}
+
+.accordion-btn + .accordion-btn {
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.accordion-icon {
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+}
+
+.accordion-btn.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    background: #fafafa;
+}
+
+.accordion-content.active {
+    max-height: 2000px;
+}
+
+.redflag-grid {
+    padding: 30px;
+}
+
+.redflag-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.redflag-number {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff6b6b 0%, #9b59b6 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.redflag-text h4 {
+    color: #ff6b6b;
+    margin: 0 0 8px 0;
+}
+
+.redflag-text p {
+    color: #666;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.assessment-checklist {
+    padding: 30px;
+}
+
+.assessment-intro {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    margin-bottom: 12px;
+    background-color: white;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.checklist-item:hover {
+    background-color: #f0f0f0;
+}
+
+.checklist-item input[type="checkbox"] {
+    margin-right: 15px;
+    margin-top: 4px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.checklist-item label {
+    cursor: pointer;
+    font-size: 1rem;
+    color: #333;
+    flex: 1;
+}
+
+.assessment-note {
+    margin-top: 25px;
+    padding: 20px;
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    border-left: 4px solid #f39c12;
+    border-radius: 6px;
+    color: #856404;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.page-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 60px;
+}
+
+.nav-btn {
+    flex: 1;
+    padding: 18px 35px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #9b59b6 0%, #ff6b6b 100%);
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .content-card {
+        padding: 20px;
+    }
+
+    .scenario-card {
+        padding: 20px;
+    }
+
+    .scenario-buttons {
+        flex-direction: column;
+    }
+
+    .redflag-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .redflag-number {
+        margin: 0 auto 15px;
+    }
+
+    .page-navigation {
+        flex-direction: column;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+}

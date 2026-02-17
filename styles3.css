@@ -1,0 +1,479 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.hero {
+    background: linear-gradient(135deg, #ff6b6b 0%, #9b59b6 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    font-weight: 300;
+    opacity: 0.95;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #9b59b6;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #ff6b6b;
+    margin-bottom: 15px;
+}
+
+h4 {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.content-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: absolute;
+    width: 85%;
+    max-width: 900px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.content-card.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+    position: relative;
+}
+
+.content-card::-webkit-scrollbar {
+    width: 8px;
+}
+
+.content-card::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.content-card::-webkit-scrollbar-thumb {
+    background: #9b59b6;
+    border-radius: 10px;
+}
+
+.content-card::-webkit-scrollbar-thumb:hover {
+    background: #8e44ad;
+}
+
+ul {
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #9b59b6 0%, #ff6b6b 100%);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-btn.prev {
+    left: -25px;
+}
+
+.carousel-btn.next {
+    right: -25px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active {
+    background: linear-gradient(135deg, #9b59b6 0%, #ff6b6b 100%);
+    transform: scale(1.3);
+}
+
+.dot:hover {
+    background-color: #bbb;
+}
+
+.tool-card {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.password-input-container {
+    margin-bottom: 30px;
+}
+
+.password-input-container label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+#password-input {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+#password-input:focus {
+    outline: none;
+    border-color: #9b59b6;
+}
+
+.toggle-visibility {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.toggle-visibility input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.toggle-visibility label {
+    cursor: pointer;
+    font-weight: normal;
+    font-size: 0.9rem;
+}
+
+.strength-display {
+    margin-bottom: 25px;
+}
+
+.strength-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+#strength-text {
+    font-weight: 700;
+}
+
+#strength-text.weak {
+    color: #e74c3c;
+}
+
+#strength-text.medium {
+    color: #f39c12;
+}
+
+#strength-text.strong {
+    color: #27ae60;
+}
+
+.strength-meter {
+    width: 100%;
+    height: 30px;
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 15px;
+    transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+.strength-bar.weak {
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+    width: 33%;
+}
+
+.strength-bar.medium {
+    background: linear-gradient(90deg, #f39c12, #e67e22);
+    width: 66%;
+}
+
+.strength-bar.strong {
+    background: linear-gradient(90deg, #27ae60, #229954);
+    width: 100%;
+}
+
+.feedback-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border-left: 4px solid #9b59b6;
+}
+
+#feedback-text {
+    color: #555;
+    line-height: 1.8;
+}
+
+.bruteforce-section {
+    background-color: #fff3cd;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #ff6b6b;
+}
+
+.crack-time {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #d63031;
+    margin-bottom: 15px;
+}
+
+.disclaimer {
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.video-section {
+    text-align: center;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.checklist-card {
+    background: white;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.checklist-intro {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #555;
+    font-weight: 500;
+}
+
+.checklist-items {
+    margin-bottom: 25px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    margin-bottom: 12px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.checklist-item:hover {
+    background-color: #f0f0f0;
+}
+
+.checklist-item input[type="checkbox"] {
+    margin-right: 15px;
+    margin-top: 4px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.checklist-item label {
+    cursor: pointer;
+    font-size: 1rem;
+    color: #333;
+    flex: 1;
+}
+
+.checklist-item input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.checklist-progress {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(135deg, #ff6b6b 0%, #9b59b6 100%);
+    color: white;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#progress-count {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.page-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 60px;
+}
+
+.nav-btn {
+    flex: 1;
+    padding: 18px 35px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #9b59b6 0%, #ff6b6b 100%);
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .content-card {
+        width: 95%;
+        padding: 20px;
+        max-height: 300px;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .carousel-btn.prev {
+        left: -10px;
+    }
+
+    .carousel-btn.next {
+        right: -10px;
+    }
+
+    .tool-card {
+        padding: 25px;
+    }
+
+    .page-navigation {
+        flex-direction: column;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+}

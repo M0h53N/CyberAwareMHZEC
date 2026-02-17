@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Account & Password Security</title>
+    <link rel="stylesheet" href="styles3.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>PASSWORDS4U</h1>
+            <p class="subtitle">Account & Password Security for Small Businesses</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="learning-section">
+            <h2>Why Password Security Matters</h2>
+            
+            <div class="carousel-container">
+                <button class="carousel-btn prev" id="prevBtn">‹</button>
+                
+                <div class="content-card active">
+                    <h3>The Dangers of Weak Passwords</h3>
+                    <p>Weak passwords are one of the most common entry points for cybercriminals. For small businesses, a single compromised account can lead to:</p>
+                    <ul>
+                        <li>Data breaches exposing customer information</li>
+                        <li>Financial losses from fraudulent transactions</li>
+                        <li>Reputational damage and loss of customer trust</li>
+                        <li>Regulatory fines for failing to protect sensitive data</li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <h3>What Makes a Strong Password?</h3>
+                    <p><strong>Length beats complexity.</strong> While using different character types helps, password length is the most critical factor:</p>
+                    <ul>
+                        <li><strong>Minimum 12 characters</strong> - Industry standard baseline</li>
+                        <li><strong>16+ characters recommended</strong> - Significantly more secure</li>
+                        <li><strong>Mix character types</strong> - Lowercase, uppercase, numbers, symbols</li>
+                        <li><strong>Avoid common patterns</strong> - No "Password123" or "Admin2024"</li>
+                        <li><strong>Use passphrases</strong> - Random words are easier to remember</li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <h3>The Risks of Password Reuse</h3>
+                    <p>Using the same password across multiple accounts creates a domino effect. If one service is breached:</p>
+                    <ul>
+                        <li>Attackers gain access to all your accounts using that password</li>
+                        <li>Personal and business accounts become compromised simultaneously</li>
+                        <li>Recovery becomes exponentially more difficult</li>
+                    </ul>
+                    <p><strong>Solution:</strong> Use unique passwords for every account, especially for business-critical systems.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>Understanding Brute Force Attacks</h3>
+                    <p>A brute force attack is when an attacker systematically tries every possible password combination until finding the correct one. Modern computers can test:</p>
+                    <ul>
+                        <li>Billions of password combinations per second</li>
+                        <li>Short passwords (6-8 characters) in minutes or hours</li>
+                        <li>Simple patterns instantly using dictionary attacks</li>
+                    </ul>
+                    <p>This is why length and complexity matter - they exponentially increase the time required to crack your password.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>Credential Stuffing Explained</h3>
+                    <p>Credential stuffing occurs when attackers use stolen username/password combinations from one breach to access accounts on other services. This works because:</p>
+                    <ul>
+                        <li>People reuse passwords across multiple sites</li>
+                        <li>Databases of breached credentials are widely available on the dark web</li>
+                        <li>Automated tools can test thousands of credentials per minute</li>
+                    </ul>
+                    <p><strong>Protection:</strong> Never reuse passwords and enable breach monitoring where available.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>Multi-Factor Authentication (MFA)</h3>
+                    <p>MFA adds an essential second layer of security beyond just passwords:</p>
+                    <ul>
+                        <li><strong>Something you know</strong> - Your password</li>
+                        <li><strong>Something you have</strong> - Your phone, security key, or authentication app</li>
+                        <li><strong>Something you are</strong> - Biometric data like fingerprints</li>
+                    </ul>
+                    <p>Even if your password is compromised, MFA prevents unauthorized access. Enable it on all business-critical accounts.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>Password Managers: Your Security Ally</h3>
+                    <p>Password managers solve the impossible challenge of remembering unique, strong passwords for every account:</p>
+                    <ul>
+                        <li>Generate cryptographically random passwords</li>
+                        <li>Store passwords in encrypted vaults</li>
+                        <li>Auto-fill credentials securely</li>
+                        <li>Sync across devices</li>
+                        <li>Alert you to weak or reused passwords</li>
+                        <li>Notify you of breached credentials</li>
+                    </ul>
+                    <p><strong>Recommended:</strong> Use reputable password managers like Bitwarden, 1Password, or LastPass.</p>
+                </div>
+                
+                <button class="carousel-btn next" id="nextBtn">›</button>
+            </div>
+            
+            <div class="carousel-dots" id="carouselDots"></div>
+        </section>
+
+        <section class="interactive-section">
+            <h2>Password Strength & Brute Force Calculator</h2>
+            <div class="tool-card">
+                <div class="password-input-container">
+                    <label for="password-input">Test Your Password Strength:</label>
+                    <input type="text" id="password-input" placeholder="Enter a password to test..." autocomplete="off">
+                    <div class="toggle-visibility">
+                        <input type="checkbox" id="show-password">
+                        <label for="show-password">Show password</label>
+                    </div>
+                </div>
+
+                <div class="strength-display">
+                    <div class="strength-label">
+                        <span>Strength:</span>
+                        <span id="strength-text">-</span>
+                    </div>
+                    <div class="strength-meter">
+                        <div id="strength-bar" class="strength-bar"></div>
+                    </div>
+                </div>
+
+                <div id="feedback-section" class="feedback-section">
+                    <h4>Analysis:</h4>
+                    <p id="feedback-text">Enter a password to see its strength analysis.</p>
+                </div>
+
+                <div id="bruteforce-section" class="bruteforce-section">
+                    <h4>Estimated Time to Crack:</h4>
+                    <p class="crack-time" id="crack-time">-</p>
+                    <p class="disclaimer">This is an educational estimate assuming 10 billion guesses/second. Actual attack speeds vary. This tool does not store or transmit your password.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-section">
+            <h2>Learn More About Password Security</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/aEmF3Iylvr4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="surprise-feature">
+            <h2>Business Password Policy Checklist</h2>
+            <div class="checklist-card">
+                <p class="checklist-intro">Implement these essential password policies in your organization:</p>
+                <div class="checklist-items">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check1">
+                        <label for="check1">Require minimum 12-character passwords for all accounts</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check2">
+                        <label for="check2">Mandate Multi-Factor Authentication on all business systems</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check3">
+                        <label for="check3">Provide password manager licenses to all employees</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check4">
+                        <label for="check4">Conduct regular password security training sessions</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check5">
+                        <label for="check5">Implement automatic password expiration for privileged accounts</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check6">
+                        <label for="check6">Monitor for compromised credentials using breach databases</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check7">
+                        <label for="check7">Establish clear procedures for password reset requests</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check8">
+                        <label for="check8">Prohibit password sharing between employees</label>
+                    </div>
+                </div>
+                <div class="checklist-progress">
+                    <p>Completed: <span id="progress-count">0</span>/8</p>
+                </div>
+            </div>
+        </section>
+
+        <nav class="page-navigation">
+            <a href="main2.html" class="nav-btn prev-btn">← Previous</a>
+            <a href="quiz.html" class="nav-btn next-btn">Next →</a>
+        </nav>
+    </main>
+
+    <script src="script3.js"></script>
+</body>
+</html>
