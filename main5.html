@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Awareness Quiz</title>
+    <link rel="stylesheet" href="quiz-styles.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Cyber Awareness Quiz</h1>
+            <p class="subtitle">Test Your Knowledge Across All Modules</p>
+        </div>
+    </header>
+
+    <nav class="main-navigation">
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="phishing.html" class="nav-link">Phishing & Email Scams</a>
+            <a href="password.html" class="nav-link">Password & Account Security</a>
+            <a href="social.html" class="nav-link">Social Engineering</a>
+            <a href="quiz.html" class="nav-link active">Quiz</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <p class="quiz-intro">
+            Answer all 10 questions based on the phishing, password, and social engineering training modules. 
+            This quiz will help reinforce what you've learned and identify areas for review.
+        </p>
+
+        <form id="quizForm">
+            <div class="content-card">
+                <h4>1. What is a common sign of phishing?</h4>
+                <label class="radio-label"><input type="radio" name="q1" value="a"> Urgent request for login details</label>
+                <label class="radio-label"><input type="radio" name="q1" value="b"> Official company newsletter</label>
+                <label class="radio-label"><input type="radio" name="q1" value="c"> Internal HR memo</label>
+            </div>
+
+            <div class="content-card">
+                <h4>2. Small businesses are targeted because:</h4>
+                <label class="radio-label"><input type="radio" name="q2" value="a"> They are easier to breach</label>
+                <label class="radio-label"><input type="radio" name="q2" value="b"> They use better security</label>
+                <label class="radio-label"><input type="radio" name="q2" value="c"> They block all emails</label>
+            </div>
+
+            <div class="content-card">
+                <h4>3. Recommended minimum password length?</h4>
+                <label class="radio-label"><input type="radio" name="q3" value="a"> 6 characters</label>
+                <label class="radio-label"><input type="radio" name="q3" value="b"> 12 characters</label>
+                <label class="radio-label"><input type="radio" name="q3" value="c"> 4 characters</label>
+            </div>
+
+            <div class="content-card">
+                <h4>4. MFA (Multi-Factor Authentication) provides:</h4>
+                <label class="radio-label"><input type="radio" name="q4" value="a"> Faster logins</label>
+                <label class="radio-label"><input type="radio" name="q4" value="b"> A second verification layer</label>
+                <label class="radio-label"><input type="radio" name="q4" value="c"> Automatic encryption</label>
+            </div>
+
+            <div class="content-card">
+                <h4>5. Social engineering relies on:</h4>
+                <label class="radio-label"><input type="radio" name="q5" value="a"> Human manipulation</label>
+                <label class="radio-label"><input type="radio" name="q5" value="b"> Hardware failure</label>
+                <label class="radio-label"><input type="radio" name="q5" value="c"> Faster internet</label>
+            </div>
+
+            <div class="content-card">
+                <h4>6. Ransomware:</h4>
+                <label class="radio-label"><input type="radio" name="q6" value="a"> Encrypts files for payment</label>
+                <label class="radio-label"><input type="radio" name="q6" value="b"> Deletes spam</label>
+                <label class="radio-label"><input type="radio" name="q6" value="c"> Boosts system speed</label>
+            </div>
+
+            <div class="content-card">
+                <h4>7. Suspicious attachments should be:</h4>
+                <label class="radio-label"><input type="radio" name="q7" value="a"> Opened immediately</label>
+                <label class="radio-label"><input type="radio" name="q7" value="b"> Reported and avoided</label>
+                <label class="radio-label"><input type="radio" name="q7" value="c"> Forwarded to colleagues</label>
+            </div>
+
+            <div class="content-card">
+                <h4>8. Reusing passwords:</h4>
+                <label class="radio-label"><input type="radio" name="q8" value="a"> Is safe</label>
+                <label class="radio-label"><input type="radio" name="q8" value="b"> Increases breach risk</label>
+                <label class="radio-label"><input type="radio" name="q8" value="c"> Is recommended</label>
+            </div>
+
+            <div class="content-card">
+                <h4>9. Human error is a major cause of:</h4>
+                <label class="radio-label"><input type="radio" name="q9" value="a"> Security incidents</label>
+                <label class="radio-label"><input type="radio" name="q9" value="b"> Wi-Fi upgrades</label>
+                <label class="radio-label"><input type="radio" name="q9" value="c"> Printer faults</label>
+            </div>
+
+            <div class="content-card">
+                <h4>10. The best defence against social engineering:</h4>
+                <label class="radio-label"><input type="radio" name="q10" value="a"> Employee awareness training</label>
+                <label class="radio-label"><input type="radio" name="q10" value="b"> Ignoring all emails</label>
+                <label class="radio-label"><input type="radio" name="q10" value="c"> Turning off computers</label>
+            </div>
+
+            <button type="button" class="submit-btn" id="submitQuiz">Submit Quiz</button>
+        </form>
+
+        <div id="results" class="quiz-results"></div>
+
+        <div class="back-home">
+            <a href="index.html" class="home-btn">← Back to Home</a>
+        </div>
+    </main>
+
+    <script src="quiz-script.js"></script>
+</body>
+</html>
