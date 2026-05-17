@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Detection Lab</title>
+    <link rel="stylesheet" href="lab-styles.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>🔬 Phishing Detection Lab</h1>
+            <p class="subtitle">Real-World Email Triage Simulation</p>
+        </div>
+    </header>
+
+    <nav class="main-navigation">
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="phishing.html" class="nav-link">Phishing & Email Scams</a>
+            <a href="password.html" class="nav-link">Password & Account Security</a>
+            <a href="social.html" class="nav-link">Social Engineering</a>
+            <a href="quiz.html" class="nav-link">Quiz</a>
+            <a href="lab.html" class="nav-link active">Lab</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="lab-intro">
+            <h2>Welcome to Your Security Operations Center</h2>
+            <p>You are the cybersecurity analyst for a small business. Your job is to review incoming emails and decide which ones are safe and which are phishing attempts that should be blocked.</p>
+            <p><strong>Instructions:</strong> Examine each email carefully. Click on email headers to inspect sender details, hover over links to preview URLs, and look for red flags before making your decision.</p>
+            <div class="lab-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Emails Reviewed:</span>
+                    <span class="stat-value" id="emailsReviewed">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Correct Decisions:</span>
+                    <span class="stat-value" id="correctDecisions">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Accuracy:</span>
+                    <span class="stat-value" id="accuracy">0%</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="emailContainer" class="email-container">
+            <!-- Emails will be loaded here by JavaScript -->
+        </div>
+
+        <div id="labResults" class="lab-results">
+            <!-- Results will appear here -->
+        </div>
+
+        <div class="lab-controls">
+            <button id="restartBtn" class="control-btn hidden">🔄 Restart Lab</button>
+            <a href="quiz.html" class="control-btn" id="quizBtn">Continue to Quiz →</a>
+        </div>
+    </main>
+
+    <script src="lab-script.js"></script>
+</body>
+</html>
